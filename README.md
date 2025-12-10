@@ -10,7 +10,7 @@ pip install -e .
 
 Git 리포지토리에서 직접 설치:
 ```
-pip install "git+https://<your_repo_url>.git"
+pip install "git+https://github.com/LHG4650/HGDriver.git"
 ```
 
 ## 사용 예시
