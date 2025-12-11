@@ -178,9 +178,11 @@ class HGChromeDriverManager:
 HGManager = HGChromeDriverManager
 
 if __name__ == "__main__":
-    manager = HGChromeDriverManager()
-    print("MainChrome 버전: ", manager.get_MainChrome_version())
-    print("LocalDriver 버전: ", manager.get_LocalDriver_version())
-    print("드라이버 버전 확인 완료")
-    manager.get_driver()
+    manager = HGManager()
+    # 원하는 경로로 드라이버 설치/사용 위치 지정 (선택)
+    manager.set_drive_file_path(os.getcwd())
 
+    driver = manager.get_driver(["--headless=new"])
+    driver.get("https://www.google.com")
+    print(driver.title)
+    driver.quit()
